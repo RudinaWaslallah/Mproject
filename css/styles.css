@@ -32,7 +32,7 @@ body {
 #text-overlay {
   position: absolute;
   top: 30%;
-  left: 18%; /* تم تغيير قيمة left هنا */
+  left: 20%; /* تم تغيير قيمة left هنا */
   transform: translateX(50%);
   font-size: 18px;
   font-weight: bold;
@@ -84,7 +84,6 @@ body {
   right: 0;
 }
 
-/* تمت إضافة قاعدة لتحديد الأزرار بنفس العرض والتباعد بينها */
 
 button {
   width: 150px;
@@ -95,7 +94,7 @@ button {
   font-size: 12px;
   font-weight: bold;
   color: white; /* لون النص */
-  cursor: pointer; /* المؤشر يظهر على شكل يد */
+  cursor: pointer; 
   border-radius: 5px; /* زوايا مستديرة */
   transition: background-color 0.3s; /* تأثير تدريجي عند التحول */
 }
