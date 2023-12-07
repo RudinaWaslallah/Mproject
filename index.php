@@ -51,14 +51,6 @@
                 <option value="xl">X-Large</option>
             </select>
         </div>
-        <div id="text-input">
-            <label for="text">Add Text:</label>
-            <input type="text" id="text" placeholder="Enter text">
-        </div>
-        <div id="color-input">
-            <label for="text-color">Text Color:</label>
-            <input type="color" id="text-color" value="#ffffff">
-        </div>
         <div id="logo-input">
             <label for="logo">Add Logo:</label>
             <input type="file" id="logo" accept="image/*" onchange="loadLogo()">
@@ -67,7 +59,20 @@
             <label for="logo-size">Logo Size:</label>
             <input type="number" id="logo-size" value="90" min="85" max="100" step="1" onchange="resizeLogo()">
         </div>
-        <!-- إضافة أزرار الأسهم -->
+        <div id="text-controls" class="input-group">
+    <div id="text-input" class="input-group">
+        <label for="text">Add Text:</label>
+        <input type="text" id="text" placeholder="Enter text">
+    </div>
+
+    <div id="text-color-input" class="input-group">
+        <label for="text-color">Text Color:</label>
+        <input type="color" id="text-color" value="#ffffff">
+    </div>
+</div>
+
+
+       
        
 <div id="arrow-buttons">
     <button id="up-arrow" onclick="moveLogo('up')">↑</button>
