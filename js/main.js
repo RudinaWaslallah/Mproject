@@ -7,13 +7,13 @@ function changeTshirtColor() {
 
   switch (colorSelector.value) {
     case 'white':
-      tshirtImg.src = 'Tshirts-images/WhiteT-shirt.png';
+      tshirtImg.src = 'Tshirts-images/WhiteT-shirt1.png';
       break;
     case 'yellow':
-      tshirtImg.src = 'Tshirts-images/YallowT-shirt.png';
+      tshirtImg.src = 'Tshirts-images/YallowT-shirt1.png';
       break;
     case 'pink':
-      tshirtImg.src = 'Tshirts-images/PinkT-shirt.png';
+      tshirtImg.src = 'Tshirts-images/PinkT-shirt1.png';
       break;
     case 'blue':
       tshirtImg.src = 'Tshirts-images/BlueT-shirt.png';
@@ -70,6 +70,60 @@ function resizeLogo() {
   // Set the width and height of the logo overlay
   logoOverlay.style.width = logoSize;
   logoOverlay.style.height = logoSize;
+
+  // Make the logo overlay draggable
+  logoOverlay.draggable = true;
+
+  // Prevent the default drag behavior to enable custom dragging
+  logoOverlay.addEventListener('dragstart', (e) => {
+      e.preventDefault();
+  });
+
+  // Update the position of the logo overlay after dragging
+  logoOverlay.addEventListener('dragend', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+
+      // Set the new position of the logo overlay
+      logoOverlay.style.left = x + 'px';
+      logoOverlay.style.top = y + 'px';
+  });
+}
+
+function moveLogo(direction) {
+    const logoOverlay = document.getElementById('logo-overlay');
+    const logoSize = parseInt(document.getElementById('logo-size').value);
+    const stepSize = 5; // حجم الخطوة لتحريك الصورة
+
+    const tshirtContainer = document.getElementById('tshirt-container');
+    const tshirtWidth = tshirtContainer.offsetWidth;
+    const tshirtHeight = tshirtContainer.offsetHeight;
+
+    const currentLeft = parseInt(logoOverlay.style.left) || 0;
+    const currentTop = parseInt(logoOverlay.style.top) || 0;
+
+    switch (direction) {
+        case 'up':
+            if (currentTop - stepSize >= 0) {
+                logoOverlay.style.top = currentTop - stepSize + 'px';
+            }
+            break;
+        case 'down':
+            if (currentTop + stepSize + logoSize <= tshirtHeight) {
+                logoOverlay.style.top = currentTop + stepSize + 'px';
+            }
+            break;
+        case 'left':
+            if (currentLeft - stepSize >= 0) {
+                logoOverlay.style.left = currentLeft - stepSize + 'px';
+            }
+            break;
+        case 'right':
+            if (currentLeft + stepSize + logoSize <= tshirtWidth) {
+                logoOverlay.style.left = currentLeft + stepSize + 'px';
+            }
+            break;
+    }
 }
 
 

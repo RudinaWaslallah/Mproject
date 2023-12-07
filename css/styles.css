@@ -29,10 +29,11 @@ body {
   height: auto;
 }
 
+
 #text-overlay {
   position: absolute;
   top: 30%;
-  left: 20%; /* تم تغيير قيمة left هنا */
+  left: 45%; /* تم تغيير قيمة left هنا */
   transform: translateX(50%);
   font-size: 18px;
   font-weight: bold;
@@ -41,7 +42,7 @@ body {
 #logo-overlay {
   position: absolute;
   top: 37%;
-  left: 13%; /* تم تغيير قيمة left هنا */
+  left: 23%; /* تم تغيير قيمة left هنا */
   transform: translateX(50%);
   width: 90px;
   height: 60px;
@@ -101,4 +102,24 @@ button {
 
 button:hover {
   background-color: #d45087; /* لون وردي أغمق عند التحويل */
+}
+#arrow-buttons {
+  position: absolute;
+  top: 40%;
+  left: 399px; /* تعديل المسافة من اليمين */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column; /* تحديد توجيه العناصر إلى عمود */
+}
+
+#up-arrow,
+#down-arrow,
+#left-arrow,
+#right-arrow {
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px; /* المسافة بين الأزرار العمودية */
+    line-height: 30px; /* جعل ارتفاع السهم يتساوى مع ارتفاع الزر */
+    text-align: center; /* توسيط النص داخل الزر */
 }

@@ -29,7 +29,7 @@
         <div id="tshirt-container">
             <div id="text-overlay" class="overlay"></div>
             <div id="logo-overlay" class="overlay"></div>
-            <img id="tshirt-img" src="Tshirts-images\WhiteT-shirt.png" alt="T-shirt">
+            <img id="tshirt-img" src="Tshirts-images\WhiteT-shirt1.png" alt="T-shirt">
             <div id="canvas-container"></div>
         </div>
         <div id="color-selector">
@@ -65,9 +65,16 @@
         </div>
         <div id="logo-size-input">
             <label for="logo-size">Logo Size:</label>
-            <input type="number" id="logo-size" value="90" min="1" max="148" step="1" onchange="resizeLogo()">
+            <input type="number" id="logo-size" value="90" min="85" max="100" step="1" onchange="resizeLogo()">
         </div>
-
+        <!-- إضافة أزرار الأسهم -->
+       
+<div id="arrow-buttons">
+    <button id="up-arrow" onclick="moveLogo('up')">↑</button>
+    <button id="down-arrow" onclick="moveLogo('down')">↓</button>
+    <button id="left-arrow" onclick="moveLogo('left')">←</button>
+    <button id="right-arrow" onclick="moveLogo('right')">→</button>
+</div>
         <div id="buttons-container">
             <button class="button-design" onclick="customizeTshirt()">Create design</button>
             <button class="button-design" onclick="saveDesign()">Save Design</button>
